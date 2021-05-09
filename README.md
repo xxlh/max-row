@@ -34,6 +34,7 @@ word.setText('Hello world!');
 ### Parameters
 - `selector`: `#id` DOM selector, default: body
 - `row`: `(number)` max rows limited, default: 3
+- `dialog`: `(function)` popup msg dialog, default: alert
 
 ## Browser Support
 

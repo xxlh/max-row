@@ -1,6 +1,7 @@
 
 class maxRow{
     constructor(options){
+        options.dialog = options.dialog || alert;
         this.selector = options.selector;
         this.row = options.row || 3;
         this.textStorage = [];
@@ -17,7 +18,6 @@ class maxRow{
         editArea.setAttribute("contenteditable",true);
         document.querySelector(this.selector).appendChild(editArea)
         this.editAreaLineHeight = parseInt(getComputedStyle(editArea).lineHeight);
-        console.log("lineH", this.editAreaLineHeight);
         return editArea;
     }
     addEvents () {
@@ -44,7 +44,7 @@ class maxRow{
             if (this.offsetHeight > Self.editAreaLineHeight*Self.row) {
                 this.innerText = Self.textStorage.pop()
                 this.blur();
-                swal(`超出了,最多${Self.row}行哦～～`);
+                options.dialog(`超出了,最多${Self.row}行哦～～`);
             }
         };
     }
