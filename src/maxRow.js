@@ -1,9 +1,9 @@
 
 class maxRow{
     constructor(options){
-        options.dialog = options.dialog || alert;
         this.selector = options.selector;
         this.row = options.row || 3;
+        this.dialog = options.dialog || ((msg) => alert(msg));
         this.textStorage = [];
         this.editArea = this.createDom();
         this.addEvents();
@@ -27,7 +27,7 @@ class maxRow{
             if (this.offsetHeight > Self.editAreaLineHeight*Self.row) {
                 this.innerText = Self.textStorage.pop()
                 this.blur();
-                swal(`超出了,最多${Self.row}行哦～～`);
+                Self.dialog(`超出了,最多${Self.row}行哦～～`);
             } else {
                 Self.textStorage.push(v);
             }
@@ -44,7 +44,7 @@ class maxRow{
             if (this.offsetHeight > Self.editAreaLineHeight*Self.row) {
                 this.innerText = Self.textStorage.pop()
                 this.blur();
-                options.dialog(`超出了,最多${Self.row}行哦～～`);
+                Self.dialog(`超出了,最多${Self.row}行哦～～`);
             }
         };
     }

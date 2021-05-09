@@ -1,6 +1,6 @@
 {
   "name": "maxrow",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "",
   "main": "lib/maxrow.cjs.js",
   "module": "lib/maxrow.es.js",
