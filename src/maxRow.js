@@ -10,7 +10,8 @@ class maxRow{
     }
 
     setText (text) {
-        this.editArea.innerText = text
+        this.editArea.innerText = text;
+        this.textStorage.push(text);
     }
     createDom(){
         let editArea=document.createElement("div");
