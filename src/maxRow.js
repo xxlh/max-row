@@ -4,7 +4,7 @@ class maxRow{
         this.selector = options.selector;
         this.row = options.row || 3;
         this.dialog = options.dialog || ((msg) => alert(msg));
-        this.textStorage = [];
+        this.textStorage = [""];
         this.editArea = this.createDom();
         this.addEvents();
     }
